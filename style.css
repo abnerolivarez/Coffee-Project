@@ -1,0 +1,322 @@
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header,.order-nav{
+    background-color: #8a3500f3;
+}
+
+.navmenu a{
+    cursor:pointer;
+
+    &:hover{
+        color: #bebebe;
+    }
+}
+
+
+.nav-link.active{
+    border-bottom:2px solid #fcfafa;
+}
+
+.navmenu-burger{
+    display: none;
+    position: relative;
+    font-size: 16px;
+    
+}
+
+.navmenu-burger.show{
+    display: block;
+    position: absolute;
+    right: 0;
+
+    margin-top: 55px;
+    flex-direction: column;
+    background-color: #000000c9;
+    
+}
+
+.coffee-logo{
+    width: 35px;
+    filter: drop-shadow(0 8px 10px #f8f8f8);
+    transition: all .3s ease;
+}
+.coffee-logo:hover{
+    scale: 1.1;
+    filter: drop-shadow(0 8px 10px #f8f8f8);
+}
+
+
+/* Transform BurgerMenu to X */
+.burger-container.active .Bline:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+}
+
+.burger-container.active .Bline:nth-child(2){
+   opacity: 0;
+}
+
+.burger-container.active .Bline:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.orderbtn{
+    padding: 8px 25px;
+    border-radius: 50px;
+    border: transparent;
+    background-color: #ff6b01 ;
+    box-shadow: 0 4px 12px #0b0b0be7;
+    font-size: clamp(.4rem, 5vw, 1rem); 
+    transition: all .3s ease;
+    &:hover{
+        background-color: #ee6300;
+    }
+}
+
+/* HERO SECTION */
+.hero-container {
+    position: absolute;
+    top: 55%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+@media(max-width: 768px){
+    .hero-container{
+        top: 50%;
+        left: 50%;
+        margin-top:30px;
+    }
+}
+
+.hero-container .hero-content p {
+    width: 100%;
+    font-weight: 500;
+    font-size: clamp(1.5rem, 5vw, 3.2rem); 
+    color: #fff;
+    margin-bottom: -16px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: #00000073;
+    
+}
+
+.coffee-title{
+    max-width: 500px;
+    background-color: #8a3500f3;
+    cursor: pointer;
+    
+}
+
+.coffee-title li:hover{
+    transition: all .3s ease;
+    color: #cbcbcb;
+}
+.hotmenu{
+    z-index: 1;
+}
+
+.hotmenu.active{
+    border-bottom: 2px solid #ffff ;
+}
+
+.coffee-image{
+    width: 100px;
+    filter: drop-shadow(0 8px 10px #000000c2);
+    transition: all .3s ease-in-out;
+}
+
+.coffee-image:hover{
+    scale: 1.05;
+}
+
+.devider{
+    width: 20%;
+    height: 3px;
+    margin: auto;
+    
+
+    background: linear-gradient(
+    45deg,
+    transparent,
+    #662c00e4,
+    transparent);
+}
+
+/* Ensure the product image sits nicely underneath the steam layer */
+.product{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: drop-shadow(0 8px 10px #f8f7f756);
+    transition: all .3s ease;
+    
+   
+}
+
+.product:hover{
+    scale:1.1;
+}
+
+.title-product{
+    width: 150px;
+    font-size: 12px;
+    
+    cursor: pointer;
+    transition: all .3s ease;
+    z-index: 50;
+}
+.title-product:hover{
+    filter: drop-shadow(0 8px 10px #c0c0c060);
+}
+
+/* SMOKE IN THE CUP */
+/* Container that bounds the steam directly over the cup image */
+.steam-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;          /* Keeps it from pushing the card content down */
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+/* Base style for every smoke strand */
+.steam {
+  position: absolute;
+  top: 180%;       /* Starts slightly overlapping your product image */
+  width: 8px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 50%;
+  filter: blur(3px);   /* Creates the soft, authentic vapor look */
+  opacity: 0;
+  animation: riseAndWave 4s linear infinite;
+}
+
+/* Individual placement and staggered delays to create a natural look */
+.steam-1 {
+  left: 45%;
+  animation-delay: 0s;
+}
+
+.steam-2 {
+  left: 50%;
+  animation-delay: 1.3s;
+  animation-duration: 4.5s; /* Slightly different duration breaks uniformity */
+}
+
+.steam-3 {
+  left: 55%;
+  animation-delay: 2.6s;
+}
+
+/* The realistic swaying air current simulation */
+@keyframes riseAndWave {
+  0% {
+    transform: translateY(0) scaleX(1) skewX(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.25; /* Quickly becomes softly visible over the liquid */
+  }
+  30% {
+    transform: translateY(-40px) scaleX(2) skewX(12deg);
+    opacity: 0.3;
+  }
+  60% {
+    transform: translateY(-90px) scaleX(3.5) skewX(-15deg);
+    opacity: 0.15;
+  }
+  80% {
+    transform: translateY(-130px) scaleX(5) skewX(8deg);
+    opacity: 0.05; /* Fades away as it disperses higher up */
+  }
+  100% {
+    transform: translateY(-170px) scaleX(6) skewX(-5deg);
+    opacity: 0;
+  }
+}
+
+/* SUBSCRIPTION SECTION */
+.mug-image{
+    animation: mugFloat 5s ease-in-out infinite;
+    transition: all .3s ease;
+}
+
+@keyframes mugFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(3deg);
+    }
+}
+
+/* =============================================================== */
+
+
+/* ABOUT SECTION */
+.about {
+        min-height: 550px;
+        margin-top: 3.7rem;
+
+        background:
+            linear-gradient(
+                rgba(43, 24, 16, 0.636),
+                rgba(43, 24, 16, .82)
+            ),
+            url("image/img2.jpg") center/cover;
+
+    }
+
+    .mug-icon{
+        width: 100px;
+    }
+
+
+
+/* CONTACT SECTION */
+
+    .contact-hero{
+        min-height: 550px;
+        margin-top: 3.7rem;
+
+        background:
+            linear-gradient(
+                 rgba(43, 24, 16, 0.636),
+                rgba(43, 24, 16, .82)
+            ),
+            url("image/img1.jpg") center/cover;
+    }
+
+    .contact-card{
+        background-color: #f4f4f4ec;
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,165 @@
+
+
+    body {
+        background: #f5eee6;
+        color: #3b2418;
+    }
+
+    /* ========================= */
+    /* MENU HERO */
+    /* ========================= */
+
+    .menu-hero {
+        min-height: 550px;
+        margin-top: 3.7rem;
+
+        background:
+            linear-gradient(
+                rgba(43, 24, 16, 0.636),
+                rgba(43, 24, 16, .82)
+            ),
+            url("image/img3.jpg") center/cover;
+
+    }
+
+
+    /* ========================= */
+    /* CATEGORY BUTTONS */
+    /* ========================= */
+
+    .menu-filter {
+        background: #fffaf5;
+        border: 1px solid #d6c0a8;
+        color: #6f4228;
+        transition: .3s;
+    }
+
+    .menu-filter:hover,
+    .menu-filter.active {
+        background: #6f4228;
+        color: white;
+        border-color: #6f4228;
+    }
+
+
+    /* ========================= */
+    /* PRODUCT CARD */
+    /* ========================= */
+
+    .product-card {
+        background: #fffaf5;
+        border: none;
+        overflow: hidden;
+        transition: .35s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(59, 36, 24, .15) !important;
+    }
+
+
+    /* ========================= */
+    /* PRODUCT IMAGE */
+    /* ========================= */
+
+    .product-image-container {
+        height: 230px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background:
+            radial-gradient(
+                circle,
+                #ead7c2 0%,
+                #f5eee6 65%
+            );
+
+        overflow: hidden;
+    }
+
+    .product-image {
+        width: 180px;
+        height: 180px;
+        object-fit: contain;
+
+        filter:
+            drop-shadow(
+                0 12px 12px rgba(43, 24, 16, .25)
+            );
+
+        transition: .4s ease;
+    }
+
+    .product-card:hover .product-image {
+        transform: scale(1.08) rotate(2deg);
+    }
+
+
+    /* ========================= */
+    /* CATEGORY BADGE */
+    /* ========================= */
+
+    .category-badge {
+        background: #d6a15d;
+        color: #2b1810;
+    }
+
+
+    /* ========================= */
+    /* PRICE */
+    /* ========================= */
+
+    .product-price {
+        color: #6f4228;
+    }
+
+
+    /* ========================= */
+    /* ORDER BUTTON */
+    /* ========================= */
+
+    .order {
+        background: #824c2c;
+        color: white;
+        border: none;
+        
+    }
+
+    .order:hover {
+        background: #602e13;
+        color: white;
+    }
+
+
+    /* ========================= */
+    /* FEATURED SECTION */
+    /* ========================= */
+
+    .featured {
+        background: #2b1810;
+    }
+
+    .featured-image {
+        max-height: 330px;
+        object-fit: contain;
+
+        filter:
+            drop-shadow(
+                0 20px 15px rgba(0, 0, 0, .4)
+            );
+    }
+
+
+    /* ========================= */
+    /* SECTION TITLE */
+    /* ========================= */
+
+    .coffee-line {
+        width: 70px;
+        height: 3px;
+        background: #d6a15d;
+    }
+
+
